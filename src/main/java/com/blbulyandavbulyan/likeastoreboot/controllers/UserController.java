@@ -33,7 +33,7 @@ public class UserController {
         return "redirect:/users";
     }
     @GetMapping("/edit/{id}")
-    public String editUser(@PathVariable Long id, Model model){
+    public String showEditPage(@PathVariable Long id, Model model){
         UserDto userDto = userService.findById(id);
         model.addAttribute("user", userDto);
         return "edit-user";
