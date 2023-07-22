@@ -43,5 +43,10 @@ public class UserController {
         userService.updateUser(userDto);
         return "redirect:/users";
     }
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        userService.deleteById(id);
+        return "redirect:/users";
+    }
     // TODO: 22.07.2023 добавить возможность удаления пользователя
 }
