@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/items")
 public class ItemController {
@@ -18,7 +20,7 @@ public class ItemController {
         this.itemService = itemService;
     }
     @PostMapping("/add")
-    public String addNewItem(ItemAddRequest itemAddRequest){
+    public String addNewItem(@Valid ItemAddRequest itemAddRequest){
         itemService.save(itemAddRequest);
         return "redirect:/items";
     }
