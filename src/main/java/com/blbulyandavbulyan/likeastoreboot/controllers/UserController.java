@@ -4,10 +4,10 @@ import com.blbulyandavbulyan.likeastoreboot.dtos.UserAddRequest;
 import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
 import com.blbulyandavbulyan.likeastoreboot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,9 +32,11 @@ public class UserController {
         userService.save(userAddRequest);
         return "redirect:/users";
     }
-//    @PostMapping("/edit")
-//    public String edituser(UserDto userDto){
-//
-//    }
-    // TODO: 22.07.2023 Добавить редактирование и удаление пользователей
+    @PostMapping("/edit/{id}")
+    public String editUser(@PathVariable Long id, Model model){
+        UserDto userDto = userService.findById(id);
+        model.addAttribute("user", userDto);
+        return "edit-user";
+    }
+    // TODO: 22.07.2023 добавить возможность удаления пользователя
 }
