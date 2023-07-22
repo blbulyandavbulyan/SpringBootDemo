@@ -1,6 +1,6 @@
 package com.blbulyandavbulyan.likeastoreboot.controllers;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.ItemAddRequest;
 import com.blbulyandavbulyan.likeastoreboot.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +18,8 @@ public class ItemController {
         this.itemService = itemService;
     }
     @PostMapping("/add")
-    public String addNewItem(ItemDto itemDto){
-        itemService.save(itemDto.toItem());
+    public String addNewItem(ItemAddRequest itemAddRequest){
+        itemService.save(itemAddRequest);
         return "redirect:/items";
     }
     @GetMapping
