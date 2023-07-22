@@ -1,9 +1,8 @@
 package com.blbulyandavbulyan.likeastoreboot.dtos;
 
-import com.blbulyandavbulyan.likeastoreboot.entities.User;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-public record UserDto(Long id, String name, Long age) {
-    public User toUser() {
-        return new User(name, age);
-    }
+public record UserDto(@NotNull Long id, @NotEmpty String name, @NotNull @Min(1) Long age) {
 }
