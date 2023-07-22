@@ -4,6 +4,9 @@ import com.blbulyandavbulyan.likeastoreboot.entities.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
+
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
+    <T> Collection<T> findAllBy(Class<T> type);
 }
