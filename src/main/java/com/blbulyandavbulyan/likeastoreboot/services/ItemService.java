@@ -11,9 +11,6 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class ItemService {
     private final ItemRepository itemRepository;
-    public void save(Item item) {
-        itemRepository.save(item);
-    }
 
     public Collection<Item> findAll() {
         return itemRepository.findAll();
