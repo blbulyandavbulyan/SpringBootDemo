@@ -48,5 +48,4 @@ public class UserController {
         userService.deleteById(id);
         return "redirect:/users";
     }
-    // TODO: 22.07.2023 добавить возможность удаления пользователя
 }
