@@ -1,13 +1,17 @@
 package com.blbulyandavbulyan.likeastoreboot.controllers;
 
+import com.blbulyandavbulyan.likeastoreboot.dtos.UserAddRequest;
 import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
 import com.blbulyandavbulyan.likeastoreboot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/users")
@@ -24,9 +28,12 @@ public class UserController {
         return "users";
     }
     @PostMapping("/add")
-    public String addNewUser(UserDto userDto){
-        userService.save(userDto.toUser());
+    public String addNewUser(@Valid UserAddRequest userAddRequest){
+        userService.save(userAddRequest);
         return "redirect:/users";
     }
-
+//    @PostMapping("/edit")
+//    public String edituser(UserDto userDto){
+//
+//    }
 }
