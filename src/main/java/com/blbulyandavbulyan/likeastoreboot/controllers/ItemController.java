@@ -29,4 +29,5 @@ public class ItemController {
         model.addAttribute("items", itemService.findAll());
         return "items";
     }
+    // TODO: 22.07.2023 Добавить редактирование и удаление товаров
 }
