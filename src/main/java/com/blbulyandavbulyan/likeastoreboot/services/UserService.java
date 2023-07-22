@@ -18,4 +18,8 @@ public class UserService {
     public void save(UserAddRequest userAddRequest) {
         userRepository.save(new User(userAddRequest.name(), userAddRequest.age()));
     }
+
+    public UserDto findById(Long id) {
+        return userRepository.findById(id, UserDto.class);
+    }
 }
