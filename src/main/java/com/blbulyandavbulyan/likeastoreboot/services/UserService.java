@@ -1,5 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.services;
 
+import com.blbulyandavbulyan.likeastoreboot.dtos.UserAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
 import com.blbulyandavbulyan.likeastoreboot.entities.User;
 import com.blbulyandavbulyan.likeastoreboot.repostiories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,11 +12,10 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    public Collection<User> findAll() {
-        return userRepository.findAll();
+    public Collection<UserDto> findAll() {
+        return userRepository.findAllBy(UserDto.class);
     }
-
-    public void save(User user) {
-        userRepository.save(user);
+    public void save(UserAddRequest userAddRequest) {
+        userRepository.save(new User(userAddRequest.name(), userAddRequest.age()));
     }
 }
