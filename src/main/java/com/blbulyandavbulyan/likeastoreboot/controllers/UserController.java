@@ -38,5 +38,10 @@ public class UserController {
         model.addAttribute("user", userDto);
         return "edit-user";
     }
+    @PostMapping("/edit")
+    public String editUser(@Valid UserDto userDto){
+        userService.updateUser(userDto);
+        return "redirect:/users";
+    }
     // TODO: 22.07.2023 добавить возможность удаления пользователя
 }
