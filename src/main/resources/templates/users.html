@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Пользователи</title>
+    <link rel='stylesheet' th:href='@{/webjars/bootstrap/css/bootstrap.min.css}'>
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 <body>
-    <table>
-        <thead>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
             <tr>
                 <td>ИД</td>
                 <td>Имя</td>
                 <td>Возраст</td>
                 <td>Действие</td>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr th:each="user : ${users}">
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.age}"></td>
                 <td>
-                    <a th:href="@{/users/edit/} + ${user.id}">Редактировать</a>
-                    <a th:href="@{/users/delete/} + ${user.id}">Удалить</a>
+                    <a th:href="@{/users/edit/} + ${user.id}" class="btn btn-primary">Редактировать</a>
+                    <a th:href="@{/users/delete/} + ${user.id}" class="btn btn-danger">Удалить</a>
                 </td>
             </tr>
-        </tbody>
-    </table>
-    <form method="POST" th:action="@{/users/add}">
-        <label for="name_input">Имя</label><input id="name_input" type="text" name="name">
-        <label for="age_input">Возраст</label><input id="age_input" type="number" name="age">
-        <button type="submit">Добавить</button>
-    </form>
+            </tbody>
+        </table>
+        <form method="POST" th:action="@{/users/add}" class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="name_input">Имя</label>
+                <input id="name_input" class="form-control" type="text" name="name">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="age_input">Возраст</label>
+                <input id="age_input" class="form-control" type="number" name="age">
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
 </body>
 </html>
