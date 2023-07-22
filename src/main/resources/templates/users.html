@@ -11,6 +11,7 @@
                 <td>ИД</td>
                 <td>Имя</td>
                 <td>Возраст</td>
+                <td>Действие</td>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,10 @@
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.age}"></td>
+                <td>
+                    <a th:href="@{/users/edit/} + ${user.id}">Редактировать</a>
+                    <a th:href="@{/users/delete/} + ${user.id}">Удалить</a>
+                </td>
             </tr>
         </tbody>
     </table>
