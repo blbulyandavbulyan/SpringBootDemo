@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="${#locale}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Пользователи</title>
+    <title th:text="#{page.users.title}"></title>
     <link rel='stylesheet' th:href='@{/webjars/bootstrap/css/bootstrap.min.css}'>
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
@@ -15,7 +15,7 @@
                 <td th:text="#{id}"></td>
                 <td th:text="#{user.name}"></td>
                 <td th:text="#{user.age}"></td>
-                <td th:text="#{actions}">Действие</td>
+                <td th:text="#{actions}"></td>
             </tr>
             </thead>
             <tbody>
