@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>ИД</td>
+                <td>Имя</td>
+                <td>Возраст</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.age}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="POST" th:action="@{/users/add}">
+        <label for="name_input">Имя</label><input id="name_input" type="text" name="name">
+        <label for="age_input">Возраст</label><input id="age_input" type="number" name="age">
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
