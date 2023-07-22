@@ -9,4 +9,6 @@ import java.util.Collection;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     <T>Collection<T> findAllBy(Class<T> type);
+
+    <T> T findById(Long id, Class<T> type);
 }
