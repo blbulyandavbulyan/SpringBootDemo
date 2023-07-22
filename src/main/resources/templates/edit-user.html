@@ -6,13 +6,14 @@
 </head>
 <body>
     <form accept-charset="UTF-8" th:action="@{/users/edit/}" method="post" th:object="${user}">
-        <input type="hidden" th:value="*{id}">
+        <input name="id" type="hidden" th:value="*{id}">
         <label>Имя пользователя:
-            <input type="text" th:value="*{name}">
+            <input name="name" type="text" th:value="*{name}">
         </label>
         <label>Возраст
-            <input type="number" th:value="*{age}">
+            <input name="age" type="number" th:value="*{age}">
         </label>
+        <button type="submit">Отредактировать</button>
     </form>
 </body>
 </html>
