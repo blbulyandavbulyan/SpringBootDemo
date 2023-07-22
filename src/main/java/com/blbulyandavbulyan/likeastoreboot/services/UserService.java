@@ -22,4 +22,8 @@ public class UserService {
     public UserDto findById(Long id) {
         return userRepository.findById(id, UserDto.class);
     }
+
+    public void updateUser(UserDto userDto) {
+        userRepository.updateUser(userDto);
+    }
 }
