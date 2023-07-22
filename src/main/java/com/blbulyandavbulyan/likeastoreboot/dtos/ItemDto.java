@@ -1,7 +1,5 @@
 package com.blbulyandavbulyan.likeastoreboot.dtos;
 
-import com.blbulyandavbulyan.likeastoreboot.entities.Item;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
