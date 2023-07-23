@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,5 +30,11 @@ public class ItemController {
         model.addAttribute("items", itemService.findAll());
         return "items";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteItem(@PathVariable Long id){
+        itemService.deleteById(id);
+        return "redirect:/items";
+    }
+
     // TODO: 22.07.2023 Добавить редактирование и удаление товаров
 }
