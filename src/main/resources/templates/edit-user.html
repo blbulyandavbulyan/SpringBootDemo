@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Редактирование пользователя</title>
-    <link rel='stylesheet' th:href='@{/webjars/bootstrap/css/bootstrap.min.css}'>
-    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<html th:lang="${#locale}" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: baseHead(~{::title})">
+    <title th:text="#{page.edit_user.title}"></title>
 </head>
 <body>
     <div class="container">
-        <h1>Редактирование пользователя</h1>
+        <h1 th:text="#{page.edit_user.title}"></h1>
         <form accept-charset="UTF-8" th:action="@{/users/edit/}" method="post" th:object="${user}">
             <input name="id" type="hidden" th:value="*{id}">
             <div class="form-group">
-                <label for="name_field">Имя пользователя</label>
-                <input id="name_field" name="name" class="form-control" type="text" th:value="*{name}" placeholder="Новое имя пользователя">
+                <label for="name_field" th:text="#{user.name}"></label>
+                <input id="name_field" name="name" class="form-control" type="text" th:value="*{name}" th:placeholder="#{enter.user.name}">
             </div>
             <div class="form-group">
-                <label for="age_field">Возраст</label>
-                <input id="age_field" class="form-control" name="age" type="number" th:value="*{age}" placeholder="Новый возраст">
+                <label for="age_field" th:text="#{user.age}"></label>
+                <input id="age_field" class="form-control" name="age" type="number" th:value="*{age}" th:placeholder="#{enter.user.age}">
             </div>
-            <button type="submit" class="btn btn-primary">Отредактировать</button>
+            <button type="submit" class="btn btn-primary" th:text="#{button.edit}"></button>
         </form>
     </div>
 </body>
