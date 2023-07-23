@@ -37,7 +37,7 @@ public class ItemController {
         return "redirect:/items";
     }
     @GetMapping("/edit/{id}")
-    public String editItem(@PathVariable Long id, Model model){
+    public String showEditPage(@PathVariable Long id, Model model){
         model.addAttribute("item", itemService.findById(id));
         return "edit-item";
     }
