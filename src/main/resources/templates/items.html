@@ -21,7 +21,7 @@
       </tr>
     </tbody>
   </table>
-  <form method="POST" th:action="@{/items/add}">
+  <form method="POST" th:action="@{/items/add}" accept-charset="UTF-8">
     <label for="title_input" th:text="#{item.title}"></label><input id="title_input" type="text" name="title" th:placeholder="#{enter.item.title}">
     <label for="price_input" th:text="#{item.price}"></label><input id="price_input" type="number" name="price" th:placeholder="#{enter.item.price}">
     <button type="submit" th:text="#{button.add}"></button>
