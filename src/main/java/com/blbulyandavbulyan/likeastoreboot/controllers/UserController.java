@@ -1,7 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.controllers;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.UserAddRequest;
-import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.user.UserAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.user.UserDto;
 import com.blbulyandavbulyan.likeastoreboot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

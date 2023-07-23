@@ -1,4 +1,4 @@
-package com.blbulyandavbulyan.likeastoreboot.dtos;
+package com.blbulyandavbulyan.likeastoreboot.dtos.user;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;

@@ -1,7 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.services;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.UserAddRequest;
-import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.user.UserAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.user.UserDto;
 import com.blbulyandavbulyan.likeastoreboot.entities.User;
 import com.blbulyandavbulyan.likeastoreboot.exceptions.UserNotFoundException;
 import com.blbulyandavbulyan.likeastoreboot.repostiories.UserRepository;
