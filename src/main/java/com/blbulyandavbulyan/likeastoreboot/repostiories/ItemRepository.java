@@ -1,7 +1,6 @@
 package com.blbulyandavbulyan.likeastoreboot.repostiories;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemDto;
-import com.blbulyandavbulyan.likeastoreboot.dtos.UserDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.item.ItemDto;
 import com.blbulyandavbulyan.likeastoreboot.entities.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

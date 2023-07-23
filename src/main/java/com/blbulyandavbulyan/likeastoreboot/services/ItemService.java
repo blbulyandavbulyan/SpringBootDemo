@@ -1,7 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.services;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemAddRequest;
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.item.ItemAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.item.ItemDto;
 import com.blbulyandavbulyan.likeastoreboot.entities.Item;
 import com.blbulyandavbulyan.likeastoreboot.exceptions.ItemNotFoundException;
 import com.blbulyandavbulyan.likeastoreboot.repostiories.ItemRepository;

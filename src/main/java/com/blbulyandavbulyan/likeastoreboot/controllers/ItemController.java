@@ -1,7 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.controllers;
 
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemAddRequest;
-import com.blbulyandavbulyan.likeastoreboot.dtos.ItemDto;
+import com.blbulyandavbulyan.likeastoreboot.dtos.item.ItemAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.item.ItemDto;
 import com.blbulyandavbulyan.likeastoreboot.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
