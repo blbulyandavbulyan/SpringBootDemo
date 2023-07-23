@@ -9,4 +9,5 @@ import java.util.Collection;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
     <T> Collection<T> findAllBy(Class<T> type);
+    <T> T findById(Long id, Class<T> type);
 }

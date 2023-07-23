@@ -35,6 +35,10 @@ public class ItemController {
         itemService.deleteById(id);
         return "redirect:/items";
     }
-
+    @GetMapping("/edit/{id}")
+    public String editItem(@PathVariable Long id, Model model){
+        model.addAttribute("item", itemService.findById(id));
+        return "edit-item";
+    }
     // TODO: 22.07.2023 Добавить редактирование и удаление товаров
 }
