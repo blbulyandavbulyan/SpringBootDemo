@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html th:lang="${#locale}" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="fragments/header :: baseHead(~{::title})">
     <title th:text="#{page.items.title}"></title>
 </head>
 <body>
