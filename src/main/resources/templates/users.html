@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html th:lang="${#locale}" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="fragments/header :: baseHead(~{::title})">
     <title th:text="#{page.users.title}"></title>
-    <link rel='stylesheet' th:href='@{/webjars/bootstrap/css/bootstrap.min.css}'>
-    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 <body>
     <div class="container">
