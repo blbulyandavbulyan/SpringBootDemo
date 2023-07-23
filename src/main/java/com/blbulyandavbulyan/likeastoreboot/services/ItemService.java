@@ -38,4 +38,11 @@ public class ItemService {
             return itemRepository.findById(id, ItemDto.class);
         else throw new ItemNotFoundException();
     }
+
+    public void updateItem(ItemDto itemDto) {
+        if(existsById(itemDto.id())){
+            itemRepository.updateItem(itemDto);
+        }
+        else throw new ItemNotFoundException();
+    }
 }
