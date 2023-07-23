@@ -5,7 +5,9 @@
 </head>
 <body>
   <div class="container">
-    <table class="table table-hover">
+    <h2 th:text="#{page.items.list}"></h2>
+    <span th:unless="${items.size() > 0}" th:text="#{page.items.empty}"></span>
+    <table th:if="${items.size() > 0}" class="table table-hover">
       <thead>
       <tr>
         <td th:text="#{id}"></td>
@@ -20,12 +22,13 @@
         <td th:text="${item.title}"></td>
         <td th:text="${item.price}"></td>
         <td>
-          <a th:href="@{/items/edit/} + ${user.id}" class="btn btn-primary" th:text="#{button.edit}"></a>
-          <a th:href="@{/items/delete/} + ${user.id}" class="btn btn-danger" th:text="#{button.delete}"></a>
+          <a th:href="@{/items/edit/} + ${item.id}" class="btn btn-primary" th:text="#{button.edit}"></a>
+          <a th:href="@{/items/delete/} + ${item.id}" class="btn btn-danger" th:text="#{button.delete}"></a>
         </td>
       </tr>
       </tbody>
     </table>
+    <h2 th:text="#{page.items.add}"></h2>
     <form method="POST" th:action="@{/items/add}" accept-charset="UTF-8" class="form-inline">
       <div class="form-group">
         <label class="sr-only" for="title_input" th:text="#{item.title}"></label>
