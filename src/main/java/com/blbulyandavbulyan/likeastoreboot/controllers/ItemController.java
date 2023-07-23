@@ -1,6 +1,7 @@
 package com.blbulyandavbulyan.likeastoreboot.controllers;
 
 import com.blbulyandavbulyan.likeastoreboot.dtos.ItemAddRequest;
+import com.blbulyandavbulyan.likeastoreboot.dtos.ItemDto;
 import com.blbulyandavbulyan.likeastoreboot.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,11 @@ public class ItemController {
     public String editItem(@PathVariable Long id, Model model){
         model.addAttribute("item", itemService.findById(id));
         return "edit-item";
+    }
+    @PostMapping("/edit")
+    public String editItem(@Valid ItemDto itemDto){
+        itemService.updateItem(itemDto);
+        return "redirect:/items";
     }
     // TODO: 22.07.2023 Добавить редактирование и удаление товаров
 }
